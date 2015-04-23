@@ -13,5 +13,19 @@ public class Application {
 		CustomerService customerService = 
 				appContext.getBean("customerService", CustomerService.class);
 		System.out.println(customerService.findAll().get(0).getFirstName());
+		
+		System.out.println("Customer service:" + customerService);
+		
+		CustomerService customerService2 = 
+				appContext.getBean("customerService", CustomerService.class);
+		
+		System.out.println("Customer service 2:" + customerService2);
+
+		if (customerService == customerService2) {
+			System.out.println("Objects are equal");
+		}
+		else {
+			System.out.println("Objects are not equal");
+		}
 	}
 }
